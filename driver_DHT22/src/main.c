@@ -19,10 +19,13 @@
 #include "sdkconfig.h"
 
 #include "DHT22.h"
+#include <DHT22_port.h>
+
+extern int DHTgpio;
 
 void DHT_task(void *pvParameter)
 {
-	setDHTgpio( 4 );
+	setDHTgpio( DHTgpio );
 	printf( "Starting DHT Task\n\n");
 
 	while(1) {
